@@ -4,6 +4,9 @@ const todoBtn = document.querySelector('.enter-button');
 const doingList = document.querySelector('.doing-list');
 const doneList = document.querySelector('.done-list');
 
+const doingNum = document.querySelector('.doing-num');
+const doneNum = document.querySelector('.done-num');
+
 let doingID = 0;
 let doneID = 0;
 
@@ -11,16 +14,20 @@ const deleteDoing = (e) => {
   const removeList = e.target.parentElement;
   removeList.remove();
   doingID--;
+  doingNum.textContent = doingID;
 };
 
 const deleteDone = (e) => {
   const removeList = e.target.parentElement;
   removeList.remove();
   doneID--;
+  doneNum.textContent = doneID;
 };
 
 const moveToDoing = (e) => {
   doingID++;
+  doingNum.textContent = doingID;
+
   const doingText = e.target.parentElement.children[0].textContent;
 
   const li = document.createElement('li');
@@ -40,14 +47,16 @@ const moveToDoing = (e) => {
 
   doingList.appendChild(li);
 
-  button.addEventListener('click', deleteDone);
+  button.addEventListener('click', deleteDoing);
   text.addEventListener('click', moveToDone);
 
-  deleteDoing(e);
+  deleteDone(e);
 };
 
 const moveToDone = (e) => {
   doneID++;
+  doneNum.textContent = doneID;
+
   const doneText = e.target.parentElement.children[0].textContent;
 
   const li = document.createElement('li');
@@ -75,6 +84,7 @@ const moveToDone = (e) => {
 
 const paintTodos = () => {
   doingID++;
+  doingNum.textContent = doingID;
 
   const li = document.createElement('li');
   li.classList.add('todo-item');

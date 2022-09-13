@@ -9,6 +9,10 @@ body {
   flex-direction: column;
 }
 
+.row-container {
+  flex-direction: row;
+}
+
 .title {
   /* color: white; */
   text-align: center;
