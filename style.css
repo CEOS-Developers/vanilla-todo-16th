@@ -1,0 +1,67 @@
+body {
+  display: flex;
+  justify-content: center;
+  /* background-color: gray; */
+  margin-top: 5rem;
+}
+
+.container {
+  flex-direction: column;
+}
+
+.title {
+  /* color: white; */
+  text-align: center;
+  font-size: 2rem;
+  /* background-color: gray; */
+}
+
+.todoForm {
+  flex-direction: row;
+}
+
+.text-container {
+  flex-direction: column;
+  width: 20rem;
+  /* height: 8rem; */
+  border: 1px solid black;
+}
+
+.todo-text {
+  font-size: 1rem;
+  text-align: center;
+  color: black;
+}
+
+.todo-item {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.enter-button {
+  opacity: 1;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.delete-button {
+  opacity: 1;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.counter {
+  flex-direction: row;
+}

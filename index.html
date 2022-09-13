@@ -8,7 +8,38 @@
   </head>
 
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <Text class="title"> To-Do </Text>
+
+      <form class="todo-form">
+        <input type="text" class="todo-input" placeholder="오늘의 계획은?" />
+        <button class="enter-button">O</button>
+      </form>
+
+      <div class="text-container">
+        <Text class="title"> 진행중 </Text>
+        <ul class="doing-list">
+          <!--
+            <li class="todo-item">
+              <Text class="todo-text"> 할 일 </Text>
+              <button class="delete-button"> x </button>
+            </li>
+          -->
+        </ul>
+      </div>
+
+      <div class="text-container">
+        <Text class="title"> 완료 </Text>
+        <ul class="done-list">
+          <!--
+            <li class="todo-item">
+              <Text class="todo-text"> 할 일 </Text>
+              <button class="delete-button"> x </button>
+            </li>
+          -->
+        </ul>
+      </div>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
