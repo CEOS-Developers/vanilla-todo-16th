@@ -43,6 +43,27 @@ function done(i){
 }
 document.getElementsByClassName('done-title')[0].innerHTML='완료한 일 '+0+'개';
 
+//완료 목록에서 삭제 & 남은 할 일 추가
+function doneDelete(i){
+
+    //남은 할 일 추가
+    var value=document.getElementsByClassName("done-task-"+i)[0].innerHTML;
+    document.querySelector(`.container`).insertAdjacentHTML('beforeend',` 
+    <div id="task-container" class="task-container-${i}">
+        <img src="./img/circle.png" class="image_todo" onclick="done(${i})" /> 
+        <div id="todo-task" class="todo-task-${i}">${value}</div> 
+        <img src="./img/delete.png" class="image" onclick="todo_delete(${index})" /> 
+    </div>`); 
+
+    //남은 할 일 개수 표시
+    todoNum=document.getElementsByClassName('image_todo').length;
+    document.getElementsByClassName('todo-title')[0].innerHTML='남은 할 일 '+todoNum+'개';
+
+    //완료 목록에서 삭제
+    done_delete(i);
+}
+
+
 //할 일에서 삭제
 function todo_delete(i){
     var removeClass=document.getElementsByClassName("task-container-"+i)[0];
