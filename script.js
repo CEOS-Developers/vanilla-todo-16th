@@ -2,6 +2,7 @@ const todoForm = document.getElementById('todoForm');
 const todoInput = document.querySelector('#todoForm input');
 const todoList = document.getElementById('todoList');
 const doneList = document.getElementById('doneList');
+const plusBtn  = document.getElementById('plusBtn');
 const todos = []; //업데이트 가능
 
 // 입력한 값 todos에 저장
@@ -35,6 +36,7 @@ function showTodo(newTodo) {
 }
 
 todoForm.addEventListener('submit', makeTodo);
+plusBtn.addEventListener('click',makeTodo);
 
 // todos 삭제
 function deleteTodo(event) {
