@@ -24,19 +24,14 @@ const deleteDone = (e) => {
   doneNum.textContent = doneID;
 };
 
-const moveToDoing = (e) => {
-  doingID++;
-  doingNum.textContent = doingID;
-
-  const doingText = e.target.parentElement.children[0].textContent;
-
+// doing-list || done-list에 요소 추가
+const plusList = (listName, listText) => {
   const li = document.createElement('li');
   li.classList.add('todo-item');
 
   const text = document.createElement('Text');
   text.classList.add('todo-text');
-  text.innerText = doingText;
-  todoInput.value = '';
+  text.innerText = listText;
 
   const button = document.createElement('img');
   button.setAttribute('src', './img/delete.png');
@@ -45,11 +40,23 @@ const moveToDoing = (e) => {
   li.appendChild(text);
   li.appendChild(button);
 
-  doingList.appendChild(li);
+  listName.appendChild(li);
 
-  button.addEventListener('click', deleteDoing);
-  text.addEventListener('click', moveToDone);
+  if (listName === doingList) {
+    button.addEventListener('click', deleteDoing);
+    text.addEventListener('click', moveToDone);
+  } else {
+    button.addEventListener('click', deleteDone);
+    text.addEventListener('click', moveToDoing);
+  }
+};
 
+const moveToDoing = (e) => {
+  doingID++;
+  doingNum.textContent = doingID;
+
+  const doingText = e.target.parentElement.children[0].textContent;
+  plusList(doingList, doingText);
   deleteDone(e);
 };
 
@@ -58,27 +65,7 @@ const moveToDone = (e) => {
   doneNum.textContent = doneID;
 
   const doneText = e.target.parentElement.children[0].textContent;
-
-  const li = document.createElement('li');
-  li.classList.add('todo-item');
-
-  const text = document.createElement('Text');
-  text.classList.add('todo-text');
-  text.innerText = doneText;
-  todoInput.value = '';
-
-  const button = document.createElement('img');
-  button.setAttribute('src', './img/delete.png');
-  button.classList.add('delete-button');
-
-  li.appendChild(text);
-  li.appendChild(button);
-
-  doneList.appendChild(li);
-
-  button.addEventListener('click', deleteDone);
-  text.addEventListener('click', moveToDoing);
-
+  plusList(doneList, doneText);
   deleteDoing(e);
 };
 
@@ -86,25 +73,8 @@ const paintTodos = () => {
   doingID++;
   doingNum.textContent = doingID;
 
-  const li = document.createElement('li');
-  li.classList.add('todo-item');
-
-  const text = document.createElement('Text');
-  text.classList.add('todo-text');
-  text.innerText = todoInput.value;
+  plusList(doingList, todoInput.value);
   todoInput.value = '';
-
-  const button = document.createElement('img');
-  button.setAttribute('src', './img/delete.png');
-  button.classList.add('delete-button');
-
-  li.appendChild(text);
-  li.appendChild(button);
-
-  doingList.appendChild(li);
-
-  button.addEventListener('click', deleteDoing);
-  text.addEventListener('click', moveToDone);
 };
 
 function handleToDoSubmit(e) {
