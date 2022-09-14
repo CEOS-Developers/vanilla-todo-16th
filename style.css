@@ -1,0 +1,115 @@
+
+.big {
+    text-align: left;
+    width: 360px;
+    height: 600px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid grey;
+    border-radius: 9px;
+    padding: 15px;
+}
+
+.today {
+    color: grey;
+    text-align: center;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 10px;
+}
+
+.TodoList {
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(56, 66, 40);
+}
+
+.input {
+    height: 25px;
+    margin-bottom: 10px;
+    width: 280px;
+    border-radius: 12rem;
+    border-color: rgb(210, 210, 210);
+    padding-left: 10px;
+}
+
+.addButton {
+    width: 50px;
+    height: 31px;
+    border-radius: 100rem; 
+    border-color: #449a80;
+    background-color: #449a80;
+    font-size: 12px;
+    color:white;
+}
+
+.todo-container{
+    height: 230px;
+    margin-bottom: 10px;
+}
+
+.todo-title{
+    border-bottom: 1px solid #449a80;
+    padding-block: 10px;
+    font-size: 15px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #449a80;
+}
+
+#task-container {
+    display: flex;
+    flex-direction: row;
+    padding-block: 8px;
+}
+
+#done-task-container {
+    display: flex;
+    flex-direction: row;
+    padding-block: 8px;
+}
+
+.image {
+    position: absolute;
+    right: 80px;
+    width: 16px;
+    height: 16px;
+}
+
+.image_todo {
+    width: 16px;
+    height: 16px;
+}
+
+.image_done {
+    width: 16px;
+    height: 16px;
+}
+
+#todo-task{
+    font-size: 13px;
+    margin-left: 10px;
+    padding-top: 1px;
+}
+
+.done-container{
+    font-size: 15px;
+}
+
+.done-title{
+    border-bottom: 1px solid grey;
+    padding-block: 10px;
+    margin-bottom: 5px;
+    color: grey;
+}
+
+#done-task{
+    font-size: 13px;
+    margin-left: 10px;
+    color: rgb(176, 173, 173);
+    padding-top: 2px;
+}
