@@ -3,12 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla Todo</title>
+    <title>To-do List</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <div class="mktodo">
+        <h1>투두리스트</h1>
+        <form id="todoForm">
+          <input placeholder="할 일을 입력하세요">
+          <button id="plusBtn">+</button>
+        </form>
+      </div>
+      <div class="todo">
+        <h2>To Do</h2>
+        <ul id="todoList"></ul>
+      </div>
+      <div class="done">
+        <h2>Done</h2>
+        <ul id="doneList"></ul>
+      </div>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
