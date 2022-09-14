@@ -38,9 +38,9 @@ const moveToDoing = (e) => {
   text.innerText = doingText;
   todoInput.value = '';
 
-  const button = document.createElement('button');
+  const button = document.createElement('img');
+  button.setAttribute('src', './img/delete.png');
   button.classList.add('delete-button');
-  button.innerText = 'X';
 
   li.appendChild(text);
   li.appendChild(button);
@@ -67,9 +67,9 @@ const moveToDone = (e) => {
   text.innerText = doneText;
   todoInput.value = '';
 
-  const button = document.createElement('button');
+  const button = document.createElement('img');
+  button.setAttribute('src', './img/delete.png');
   button.classList.add('delete-button');
-  button.innerText = 'X';
 
   li.appendChild(text);
   li.appendChild(button);
@@ -94,9 +94,9 @@ const paintTodos = () => {
   text.innerText = todoInput.value;
   todoInput.value = '';
 
-  const button = document.createElement('button');
+  const button = document.createElement('img');
+  button.setAttribute('src', './img/delete.png');
   button.classList.add('delete-button');
-  button.innerText = 'X';
 
   li.appendChild(text);
   li.appendChild(button);

@@ -13,15 +13,17 @@
 
       <form class="todo-form">
         <input type="text" class="todo-input" placeholder="오늘의 계획은?" />
-        <button class="enter-button">O</button>
+        <img class="enter-button" src="./img/plus.png" />
       </form>
+
+      <hr />
 
       <div class="text-container">
         <Text class="title"> Doing </Text>
         <div class="row-container">
-          <Text> 진행 중인 투두리스트는 </Text>
+          <Text class="todo-text"> 진행 중인 투두리스트는 </Text>
           <Text class="doing-num"> 0 </Text>
-          <Text> 개 입니다. </Text>
+          <Text class="todo-text"> 개 입니다. </Text>
         </div>
         <ul class="doing-list">
           <!--
@@ -33,12 +35,14 @@
         </ul>
       </div>
 
+      <hr />
+
       <div class="text-container">
         <Text class="title"> Done </Text>
         <div class="row-container">
-          <Text> 완료한 투두리스트는 </Text>
+          <Text class="todo-text"> 완료한 투두리스트는 </Text>
           <Text class="done-num"> 0 </Text>
-          <Text> 개 입니다. </Text>
+          <Text class="todo-text"> 개 입니다. </Text>
         </div>
         <ul class="done-list">
           <!--

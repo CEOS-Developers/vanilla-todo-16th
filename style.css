@@ -1,12 +1,22 @@
 body {
   display: flex;
   justify-content: center;
-  /* background-color: gray; */
+  align-items: center;
+  background-color: black;
   margin-top: 5rem;
+}
+
+hr {
+  height: 0.2rem;
+  width: 25rem;
+  background-color: white;
 }
 
 .container {
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid white; */
 }
 
 .row-container {
@@ -14,27 +24,53 @@ body {
 }
 
 .title {
-  /* color: white; */
+  padding-left: 1rem;
+  color: white;
   text-align: center;
   font-size: 2rem;
-  /* background-color: gray; */
+  font-weight: bold;
 }
 
-.todoForm {
+.todo-form {
   flex-direction: row;
+  margin-bottom: 1rem;
+}
+
+.todo-input {
+  width: 20rem;
+  height: 2rem;
+}
+
+.enter-button {
+  margin-bottom: -1rem;
+  margin-left: 0.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
 }
 
 .text-container {
   flex-direction: column;
-  width: 20rem;
-  /* height: 8rem; */
-  border: 1px solid black;
+  width: 25rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .todo-text {
+  padding: 1rem;
   font-size: 1rem;
   text-align: center;
-  color: black;
+  color: white;
+}
+
+.done-num {
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+}
+.doing-num {
+  font-size: 1rem;
+  text-align: center;
+  color: white;
 }
 
 .todo-item {
@@ -45,25 +81,12 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 3rem;
-  border-bottom: 1px solid #ddd;
-}
-
-.enter-button {
-  opacity: 1;
-  width: 2rem;
-  height: 2rem;
-  font-size: 1rem;
-  font-weight: lighter;
-  cursor: pointer;
 }
 
 .delete-button {
-  opacity: 1;
-  width: 2rem;
-  height: 2rem;
-  font-size: 1rem;
-  font-weight: lighter;
-  cursor: pointer;
+  margin-right: 1rem;
+  height: 1rem;
+  width: 1rem;
 }
 
 .counter {
