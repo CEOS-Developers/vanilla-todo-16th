@@ -42,3 +42,19 @@ function done(i){
     document.getElementsByClassName('done-title')[0].innerHTML='완료한 일 '+doneNum+'개';
 }
 document.getElementsByClassName('done-title')[0].innerHTML='완료한 일 '+0+'개';
+
+//할 일에서 삭제
+function todo_delete(i){
+    var removeClass=document.getElementsByClassName("task-container-"+i)[0];
+    removeClass.remove();
+    --todoNum;
+    document.getElementsByClassName('todo-title')[0].innerHTML='남은 할 일 '+todoNum+'개';
+}
+
+//완료목록에서 삭제
+function done_delete(i){
+    var removeClass=document.getElementsByClassName("done-task-container-"+i)[0];
+    removeClass.remove();
+    --doneNum;
+    document.getElementsByClassName('done-title')[0].innerHTML='완료한 일 '+doneNum+'개';
+}
