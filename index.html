@@ -14,14 +14,15 @@
         <form id="toDoForm">
           <input type="text" placeholder="Write Here!" id="toDoInput" />
           <button type="submit">add</button>
+
           <!--form안에 submit type의 button두면 클릭과 엔터를 모두 submit event로 쓸 수 있음-->
         </form>
       </div>
       <hr />
-      <span>Doing</span>
+      <span id="doingText">Doing (0)</span>
       <ul id="doing"></ul>
       <hr />
-      <span>Done</span>
+      <span id="doneText">Done (0)</span>
       <ul class="done"></ul>
     </div>
   </body>
