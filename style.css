@@ -41,7 +41,7 @@ h1 {
 .doingContainer,
 .doneContainer {
   flex: 30;
-  overflow: scroll;
+  overflow: auto;
 }
 
 #toDoInput {

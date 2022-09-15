@@ -16,6 +16,7 @@ function deleteToDo(event) {
 function checkToDo(event) {
   const checkItem = event.target.parentElement;
   event.target.remove();
+  //Done에 들어오면 체크박스 지우기
   doneList.appendChild(checkItem);
   doingText.innerText = `Doing (${toDoList.childElementCount})`;
   doneText.innerText = `Done (${doneList.childElementCount})`;
@@ -29,13 +30,14 @@ function Doing(saveToDo) {
   checkBtn.innerText = '✅';
   deleteBtn.innerText = '❌';
 
-  checkBtn.addEventListener('click', checkToDo);
-  deleteBtn.addEventListener('click', deleteToDo);
   content.innerText = saveToDo;
   content.appendChild(checkBtn);
   content.appendChild(deleteBtn);
   toDoList.appendChild(content);
   doingText.innerText = `Doing (${toDoList.childElementCount})`;
+
+  checkBtn.addEventListener('click', checkToDo);
+  deleteBtn.addEventListener('click', deleteToDo);
 }
 
 function onSubmit(event) {
