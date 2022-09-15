@@ -13,17 +13,21 @@
       <div class="post">
         <form id="toDoForm">
           <input type="text" placeholder="Write Here!" id="toDoInput" />
-          <button type="submit">add</button>
+          <button type="submit" id="toDoBtn">add</button>
 
           <!--form안에 submit type의 button두면 클릭과 엔터를 모두 submit event로 쓸 수 있음-->
         </form>
       </div>
       <hr />
-      <span id="doingText">Doing (0)</span>
-      <ul id="doing"></ul>
+      <div class="doingContainer">
+        <span id="doingText">Doing (0)</span>
+        <ul id="doing"></ul>
+      </div>
       <hr />
-      <span id="doneText">Done (0)</span>
-      <ul id="done"></ul>
+      <div class="doneContainer">
+        <span id="doneText">Done (0)</span>
+        <ul id="done"></ul>
+      </div>
     </div>
   </body>
   <script src="script.js"></script>

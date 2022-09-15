@@ -1,5 +1,6 @@
 body {
   background-color: powderblue;
+  font-family: 'SEBANG_Gothic_Bold';
 }
 
 .container {
@@ -7,6 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  align-items: stretch;
   top: 0;
   bottom: 0;
   left: 0;
@@ -23,4 +25,48 @@ body {
 
 hr {
   width: 100%;
+  margin-bottom: 30px;
+}
+
+h1 {
+  flex: 5;
+  align-self: center;
+}
+
+.post {
+  flex: 5;
+  align-self: center;
+}
+
+.doingContainer,
+.doneContainer {
+  flex: 30;
+  overflow: scroll;
+}
+
+#toDoInput {
+  width: 300px;
+  height: 40px;
+}
+
+#toDoBtn {
+  width: 40px;
+  height: 40px;
+}
+
+@font-face {
+  font-family: 'SEBANG_Gothic_Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#doingText,
+#doneText {
+  padding-left: 30px;
+}
+
+li {
+  list-style-type: none;
 }
