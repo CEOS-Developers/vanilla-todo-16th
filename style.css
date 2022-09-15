@@ -1,0 +1,28 @@
+.box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    align-content: space-around;
+}
+
+.item {
+    width: 50vh;
+}
+
+.item1 {
+    background: #836fa9;
+    height: 15vh;
+}
+
+.item2 {
+    background: #e6ceff;
+    height: 35vh;
+}
+
+.item3 {
+    background: #b39ddb;
+    height: 35vh;
+}
