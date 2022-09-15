@@ -14,7 +14,7 @@ function submitTodo(e) {
   todoSpan.innerText = todoInput.value;
   todoInput.value = "";
 
-  deleteBtn.innerText = "❌";
+  deleteBtn.innerText = "✅";
   deleteBtn.addEventListener("click", deleteTodo);
 
   todoLi.appendChild(todoSpan);
