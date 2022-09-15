@@ -2,9 +2,17 @@ const toDoForm = document.querySelector(".toDoForm");
 const toDos = document.querySelector(".toDos");
 const toDoInput= toDoForm.querySelector("input");
 const done = document.querySelector(".done");
+const toDoLen = document.querySelector(".toDoLen");
+const doneLen = document.querySelector(".doneLen");
 
 let toDoList = [];
 let doneList = [];
+
+// todolist, donelist 길이 반영
+function calLen(){
+    toDoLen.innerHTML = toDoList.length;
+    doneLen.innerHTML = doneList.length;
+}
 
 // todo, done 저장함수
 function addFunc(text,id,type){
@@ -30,6 +38,7 @@ function delToDo(event){
     toDos.removeChild(li);
     toDoList = toDoList.filter((toDo)=> toDo.num !== Number(li.id));
     console.log('del:',toDoList);
+    calLen();
 }
 
 // donelist에서 삭제
@@ -38,6 +47,7 @@ function delDone(event){
     const li = span.parentNode;
     done.removeChild(li);
     doneList = doneList.filter((done)=>done.num !== Number(li.id));
+    calLen();
 }
 
 // done에 추가
@@ -57,6 +67,7 @@ function addDone(text){
     li.id = doneList.length +1;
     done.appendChild(li);
     addFunc(text,doneList.length +1,"done");
+    calLen();
 }
 
 // todo -> done
@@ -66,6 +77,7 @@ function changeToDo(event){
     console.log('changeToDo:',span.innerHTML);
     delToDo(event);
     addDone(span.innerHTML);
+    calLen();
 }
 
 // done -> todo
@@ -75,6 +87,7 @@ function changeDone(event){
     console.log('changeDone:',span.innerHTML);
     delDone(event);
     addToDo(span.innerHTML);
+    calLen();
 }
 
 // todo에 추가
@@ -94,6 +107,8 @@ function addToDo(toDo){
     li.id = toDoList.length +1; // list 관리 위해서 id 추가
     toDos.appendChild(li);
     addFunc(toDo,toDoList.length +1,"todo");
+
+    calLen();
 }
 
 function createToDo(event){
