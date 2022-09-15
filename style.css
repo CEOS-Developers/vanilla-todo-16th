@@ -48,6 +48,7 @@ input {
 button {
     border: 0;
     background: none;
+    cursor: pointer;
 }
 
 .list {
@@ -57,4 +58,9 @@ button {
     height: 100px;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+#done-list {
+    text-decoration: line-through;
+    color: gray;
 }
