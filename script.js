@@ -8,6 +8,7 @@ todoForm.addEventListener("submit", submitTodo);
 function submitTodo(e) {
   e.preventDefault();
   createTodo(todoInput.value);
+  todoInput.value = "";
 }
 
 /* 
