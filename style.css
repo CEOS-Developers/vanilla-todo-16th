@@ -1,4 +1,12 @@
+@font-face {
+    font-family: 'EarlyFontDiary';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body {
+    font-family: 'EarlyFontDiary';
     height: 100%;
     display: flex;
     align-items : center;
@@ -58,6 +66,10 @@ button {
     height: 100px;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+ul {
+    padding: 0px;
 }
 
 #done-list {
