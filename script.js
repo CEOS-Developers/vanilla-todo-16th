@@ -23,6 +23,6 @@ function submitTodo(e) {
   todoList.append(todoLi);
 }
 
-function deleteTodo() {
-  console.log("delete");
+function deleteTodo(e) {
+  e.target.parentElement.remove();
 }
