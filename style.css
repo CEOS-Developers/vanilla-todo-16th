@@ -70,3 +70,13 @@ h1 {
 li {
   list-style-type: none;
 }
+
+#check,
+#delete {
+  margin-left: 10px;
+}
+
+#doing,
+#done {
+  flex-wrap: inherit;
+}

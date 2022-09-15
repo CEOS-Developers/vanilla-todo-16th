@@ -31,6 +31,8 @@ function Doing(saveToDo) {
   deleteBtn.innerText = '❌';
   checkBtn.addEventListener('click', checkToDo);
   deleteBtn.addEventListener('click', deleteToDo);
+  checkBtn.id = 'check';
+  deleteBtn.id = 'delete';
 
   content.innerText = saveToDo;
   content.appendChild(checkBtn);
