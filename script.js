@@ -25,26 +25,29 @@ function checkToDo(event) {
 function Doing(saveToDo) {
   const content = document.createElement('li');
   const deleteBtn = document.createElement('button');
-  const checkBtn = document.createElement('button', (id = 'check'));
+  const checkBtn = document.createElement('button');
 
   checkBtn.innerText = '✅';
   deleteBtn.innerText = '❌';
+  checkBtn.addEventListener('click', checkToDo);
+  deleteBtn.addEventListener('click', deleteToDo);
 
   content.innerText = saveToDo;
   content.appendChild(checkBtn);
   content.appendChild(deleteBtn);
   toDoList.appendChild(content);
   doingText.innerText = `Doing (${toDoList.childElementCount})`;
-
-  checkBtn.addEventListener('click', checkToDo);
-  deleteBtn.addEventListener('click', deleteToDo);
 }
 
 function onSubmit(event) {
   event.preventDefault();
   const saveToDo = toDoInput.value;
-  toDoInput.value = '';
-  Doing(saveToDo);
+  if (saveToDo) {
+    toDoInput.value = '';
+    Doing(saveToDo);
+  } else {
+    alert('Check Content plz :)');
+  }
 }
 
 toDo.addEventListener('submit', onSubmit);
