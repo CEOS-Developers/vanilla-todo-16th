@@ -3,12 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla Todo</title>
+    <title>💭 Todo</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <h1>Things to do</h1>
+      <form id="input-form">
+        <input id="input-text" type="text" placeholder="📍 Enter your to-do" />
+        <button id="input-button" onclick="addTodoList()">+</button>
+      </form>
+      <section class="todo-section">
+        <h2>📂 to do <span id="todo-count"></span></h2>
+        <ul id="todo-list"></ul>
+      </section>
+      <section class="done-section">
+        <h2>🗑 done<span id="done-count"></span></h2>
+        <ul id="done-list"></ul>
+      </section>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
