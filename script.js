@@ -48,4 +48,14 @@ const addTodoList = () => {
   renderTodoItem();
 };
 
+// isDone의 상태를 반대로 바꿔 준다
+const toggleItem = (e) => {
+  const itemObject = itemList.find(
+    (inputObject) => inputObject.text === e.target.innerText
+  );
+  itemObject.isDone = !itemObject.isDone;
+  localStorage.setItem("itemList", JSON.stringify(itemList)); // 로컬 스토리지 갱신
+  renderTodoItem();
+};
+
 window.onload = renderTodoItem();
