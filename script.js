@@ -42,7 +42,7 @@ function showTodo(newTodo) {
 }
 
 function showDone() {
-    //li 안에 span 만들기 (창에 입력한 값이 span이 됨)
+  //li 안에 span 만들기 (창에 입력한 값이 span이 됨)
   const li = document.createElement('li');
   li.id = newTodo.id;
   const span = document.createElement('span');
@@ -61,6 +61,7 @@ function showDone() {
 
 // todos 삭제
 function deleteTodo(event) {
+  //버튼의 부모인 li 삭제
   const li = event.target.parentElement;
   li.remove();
   //toDo의 id(num)와 li의 id(string)가 다르면 삭제
@@ -70,16 +71,14 @@ function deleteTodo(event) {
 
 // dones 삭제
 
-
 // To Do 항목 개수 세기
 const todoCount = () => {
   const todoNum = document.getElementById('todoTitle');
   // 해결 중 ... length가 0부터 출력됨
-  todoNum.innerText = `To Do (${todos.length+1})`;
+  todoNum.innerText = `To Do (${todos.length + 1})`;
 };
 
 // Done 항목 개수 세기
-
 
 // To Do -> Done
 function todoToggle(event) {
