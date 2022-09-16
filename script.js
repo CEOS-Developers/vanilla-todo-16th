@@ -60,6 +60,7 @@ function addDone(text){
     delButton.addEventListener("click",delDone);
 
     span.innerHTML = text;
+    span.style.textDecorationLine = "line-through";
     span.addEventListener("click",changeDone);
 
     li.appendChild(span);
