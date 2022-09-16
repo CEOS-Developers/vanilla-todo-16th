@@ -11,13 +11,33 @@ let doneList = [];
 let todo_num=0;
 let done_num=0;
 
+// local storage에 있는 todolist, donelist 갖고오기
+function getList(){
+    const localToDoList = localStorage.getItem("toDoList");
+    const localDoneList = localStorage.getItem("doneList");
+    if(localToDoList !== null){
+        const parse_toDoList = JSON.parse(localToDoList);
+        for (let toDo of parse_toDoList){
+            const {text} = toDo;
+            addToDo(text);
+        }
+    }
+    if(localDoneList !== null){
+        const parse_doneList = JSON.parse(localDoneList);
+        for(let done of parse_doneList){
+            const {text} = done;
+            addDone(text);
+        }
+    }
+}
+
 // todolist, donelist 길이 반영
 function calLen(){
     toDoLen.innerHTML = toDoList.length;
     doneLen.innerHTML = doneList.length;
 }
 
-// todo, done 저장함수
+// todolist, donelist 저장함수
 function addFunc(text,id,type){
     const addObj = {
         num : id,
@@ -27,14 +47,13 @@ function addFunc(text,id,type){
     if(type=="todo"){
         toDoList.push(addObj);
         todo_num+=1;
+        localStorage.setItem("toDoList",JSON.stringify(toDoList));
     }else{
         doneList.push(addObj);
         done_num+=1;
+        localStorage.setItem("doneList",JSON.stringify(doneList));
     }
-    console.log('addFunc:todolist:',toDoList);
-    console.log('addFunc:donelist:',doneList);
 }
-
 
 // todolist에서 삭제
 function delToDo(event){
@@ -42,8 +61,7 @@ function delToDo(event){
     const li = button.parentNode;
     toDos.removeChild(li);
     toDoList = toDoList.filter((toDo)=> toDo.num !== Number(li.id));
-    console.log('delToDo:todolist:',toDoList);
-    console.log('delToDo:donelist:',doneList);
+    localStorage.setItem("toDoList",JSON.stringify(toDoList));
     calLen();
 }
 
@@ -53,8 +71,7 @@ function delDone(event){
     const li = span.parentNode;
     done.removeChild(li);
     doneList = doneList.filter((done)=>done.num !== Number(li.id));
-    console.log('delDone:todolist:',toDoList);
-    console.log('delDone:donelist:',doneList);
+    localStorage.setItem("doneList",JSON.stringify(doneList));
     calLen();
 }
 
@@ -88,10 +105,6 @@ function changeToDo(event){
     const li = span.parentNode;
     delToDo(event);
     addDone(span.innerHTML);
-
-    console.log('changeToDo:todolist:',toDoList);
-    console.log('changeToDo:donelist:',doneList);
-
     calLen();
 }
 
@@ -101,10 +114,6 @@ function changeDone(event){
     const li = span.parentNode;
     delDone(event);
     addToDo(span.innerHTML);
-
-    console.log('changeDone:todolist:',toDoList);
-    console.log('changeDone:donelist:',doneList);
-
     calLen();
 }
 
@@ -139,7 +148,9 @@ function createToDo(event){
     toDoInput.value="";
 }
 
+// submit event 들어오면 createToDo 함수 실행
 function init(){
+    getList();
     toDoForm.addEventListener("submit",createToDo);
 }
 
