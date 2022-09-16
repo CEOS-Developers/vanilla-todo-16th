@@ -9,15 +9,17 @@
   <body>
     <div class="container">
       <h1>Things to do</h1>
-      <form id="input-box">
-        <input id="input-form" type="text" placeholder="📍 Enter your to-do" />
-        <button id="input-button">+</button>
+      <form id="input-form">
+        <input id="input-text" type="text" placeholder="📍 Enter your to-do" />
+        <button id="input-button" onclick="addTodoList()">+</button>
       </form>
-      <section class="todo-box">
+      <section class="todo-section">
         <h2>📂 to do</h2>
+        <ul id="todo-list"></ul>
       </section>
-      <section class="done-box">
+      <section class="done-section">
         <h2>🗑 done</h2>
+        <ul class="done-list"></ul>
       </section>
     </div>
   </body>

@@ -21,16 +21,16 @@ h2 {
   margin-left: 5%;
 }
 
-/* input-box */
+/* input-form */
 
-#input-box {
+#input-form {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-bottom: 1rem;
 }
 
-#input-form {
+#input-text {
   width: 80%;
   height: 30px;
   font-size: 18px;
@@ -47,17 +47,17 @@ h2 {
   cursor: pointer;
 }
 
-/* todo-box */
+/* todo-section */
 
-.todo-box {
+.todo-section {
   flex: 0.5;
   overflow: auto;
   border-top: 1px solid rgb(213, 213, 213);
 }
 
-/* done-box */
+/* done-section */
 
-.done-box {
+.done-section {
   flex: 0.5;
   overflow: auto;
   border-top: 1px solid rgb(213, 213, 213);
