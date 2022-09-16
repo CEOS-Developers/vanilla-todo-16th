@@ -8,6 +8,9 @@ const doneLen = document.querySelector(".doneLen");
 let toDoList = [];
 let doneList = [];
 
+let todo_num=0;
+let done_num=0;
+
 // todolist, donelist 길이 반영
 function calLen(){
     toDoLen.innerHTML = toDoList.length;
@@ -23,11 +26,13 @@ function addFunc(text,id,type){
     }
     if(type=="todo"){
         toDoList.push(addObj);
+        todo_num+=1;
     }else{
         doneList.push(addObj);
+        done_num+=1;
     }
-    console.log('todolist:',toDoList);
-    console.log('donelist:',doneList);
+    console.log('addFunc:todolist:',toDoList);
+    console.log('addFunc:donelist:',doneList);
 }
 
 
@@ -37,7 +42,8 @@ function delToDo(event){
     const li = button.parentNode;
     toDos.removeChild(li);
     toDoList = toDoList.filter((toDo)=> toDo.num !== Number(li.id));
-    console.log('del:',toDoList);
+    console.log('delToDo:todolist:',toDoList);
+    console.log('delToDo:donelist:',doneList);
     calLen();
 }
 
@@ -47,6 +53,8 @@ function delDone(event){
     const li = span.parentNode;
     done.removeChild(li);
     doneList = doneList.filter((done)=>done.num !== Number(li.id));
+    console.log('delDone:todolist:',toDoList);
+    console.log('delDone:donelist:',doneList);
     calLen();
 }
 
@@ -56,7 +64,10 @@ function addDone(text){
     const span = document.createElement("span");
     const delButton = document.createElement("button");
 
-    delButton.innerText="X"
+    delButton.innerText="✖"
+    delButton.style.color = 'red';
+    delButton.style.backgroundColor = 'white';
+    delButton.style.border = 0;
     delButton.addEventListener("click",delDone);
 
     span.innerHTML = text;
@@ -65,9 +76,9 @@ function addDone(text){
 
     li.appendChild(span);
     li.appendChild(delButton);
-    li.id = doneList.length +1;
+    li.id = done_num;
     done.appendChild(li);
-    addFunc(text,doneList.length +1,"done");
+    addFunc(text,done_num,"done");
     calLen();
 }
 
@@ -75,9 +86,12 @@ function addDone(text){
 function changeToDo(event){
     const span = event.target;
     const li = span.parentNode;
-    console.log('changeToDo:',span.innerHTML);
     delToDo(event);
     addDone(span.innerHTML);
+
+    console.log('changeToDo:todolist:',toDoList);
+    console.log('changeToDo:donelist:',doneList);
+
     calLen();
 }
 
@@ -85,9 +99,12 @@ function changeToDo(event){
 function changeDone(event){
     const span = event.target;
     const li = span.parentNode;
-    console.log('changeDone:',span.innerHTML);
     delDone(event);
     addToDo(span.innerHTML);
+
+    console.log('changeDone:todolist:',toDoList);
+    console.log('changeDone:donelist:',doneList);
+
     calLen();
 }
 
@@ -97,7 +114,10 @@ function addToDo(toDo){
     const span = document.createElement("span");
     const delButton = document.createElement("button");
 
-    delButton.innerText="X";
+    delButton.innerText="✖"
+    delButton.style.color = 'red';
+    delButton.style.backgroundColor = 'white';
+    delButton.style.border = 0;
     delButton.addEventListener("click",delToDo);
 
     span.innerHTML = toDo;
@@ -105,9 +125,9 @@ function addToDo(toDo){
 
     li.appendChild(span);
     li.appendChild(delButton);
-    li.id = toDoList.length +1; // list 관리 위해서 id 추가
+    li.id = todo_num; // list 관리 위해서 id 추가
     toDos.appendChild(li);
-    addFunc(toDo,toDoList.length +1,"todo");
+    addFunc(toDo,todo_num,"todo");
 
     calLen();
 }
