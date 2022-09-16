@@ -7,8 +7,29 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
-    <div class="container"></div>
+  <body style="background: #7b978f;">
+    
+    <div class="big" >
+      <div class="today"></div>
+      <div class="TodoList"> To Do List</div>
+
+      <div style="margin-bottom: 8px;" class="form">
+        <input type="text" name="inputValue" id="inputValue" class="input" placeholder="할 일을 입력해주세요" />
+        <button class="addButton"  onclick="getValueInput()">+</button>
+      </div>
+
+      <div class="todo-container">
+        <div class="todo-title"></div>
+          <div class="container" style="height: 200px; overflow:auto; "></div>
+      </div>
+
+      <div class="done-container">
+        <div class="done-title"></div>
+          <div class="container-done" style="height: 200px; overflow:auto; "></div>
+      </div>
+
+    </div>
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>
+
