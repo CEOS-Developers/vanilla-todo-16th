@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Todo</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <div class="entire-container">
-            
       <div class="top">
-          <h3>To-Do-List</h3>
-      <form class="frm-container">
-          <input type="text" class="inputValue" name="inputValue" id="inputValue" placeholder="할 일을 입력하시오"  
-          onfocus="this.placeholder=''" onblur="this.placeholder='할 일을 입력하시오'" 
+        <h2>To-Do-List</h2>
+        <form class="frm-container">
+          <input
+            type="text"
+            class="inputValue"
+            name="inputValue"
+            id="inputValue"
+            placeholder="할 일을 입력하시오"
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='할 일을 입력하시오'"
           />
-          <input type="submit" name="submit" id='submit'value="submit"/>
-      </form>
-  </div>
+          <input
+            type="submit"
+            class="submit"
+            name="submit"
+            id="submit"
+            value="+"
+          />
+        </form>
+      </div>
 
-          
-      <div class="center"> 
-      <span class="do-container">할 일(<h4 id="l_res">0</h4>)</span>
-          <ul id="to-do-list" class="unif-container">
-              
-              
-              
-
-
-          </ul>
-      
-      </div>  
+      <div class="center">
+        <span class="do-container"
+          >할 일
+          <h4 id="l_res">0</h4>
+        </span>
+        <ul id="to-do-list" class="unif-container"></ul>
+      </div>
 
       <div class="last">
-
-          <span class="did-container">끝난 일(<h4 id="d_res">0</h4>)</span>
-          <ul id="done-list" class="unif2-container">
-              
-          </ul>
+        <span class="did-container"
+          >끝난 일
+          <h4 id="d_res">0</h4>
+        </span>
+        <ul id="done-list" class="unif2-container"></ul>
       </div>
-      
-  </div>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
