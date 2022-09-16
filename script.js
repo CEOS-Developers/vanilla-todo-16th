@@ -1,42 +1,51 @@
-let todoList = [];
-let doneList = [];
+let itemList = [];
 
-// 로컬 스토리지에 있는 값 불러오기
-const loadLocalStorage = () => {
-  const loadedTodo = localStorage.getItem("todo");
-  console.log(loadedTodo);
+// 로컬 스토리지에서 값을 불러와 화면에 그려 준다
+const renderTodoItem = () => {
+  const savedTodo = localStorage.getItem("itemList");
+
+  const todoList = document.getElementById("todo-list");
+  const doneList = document.getElementById("done-list");
+
+  // 덮어쓰지 않도록 초기화
+  todoList.innerHTML = "";
+  doneList.innerHTML = "";
 
   // 데이터가 존재하는지 확인
-  if (loadedTodo) {
-    todoList = JSON.parse(loadedTodo);
-    todoList.forEach((loadedItem) => {
-      renderTodoItem(loadedItem);
+  if (savedTodo) {
+    itemList = JSON.parse(savedTodo);
+    itemList.forEach((savedItem) => {
+      const item = document.createElement("li");
+      const itemText = document.createElement("span");
+      itemText.className = "item-text";
+      itemText.addEventListener("click", toggleItem);
+      const deleteButton = document.createElement("button");
+
+      itemText.innerText = savedItem.text;
+
+      if (!savedItem.isDone) {
+        item.appendChild(itemText);
+        todoList.appendChild(item);
+      } else {
+        item.appendChild(itemText);
+        doneList.appendChild(item);
+      }
     });
   }
-};
-
-// 아이템을 가지고 화면에 그려 준다
-const renderTodoItem = (inputItem) => {
-  const todos = document.getElementById("todo-list");
-
-  const todoItem = document.createElement("li");
-  const todoText = document.createElement("span");
-  todoText.className = "todo-text";
-  const deleteButton = document.createElement("button");
-
-  todoText.innerText = inputItem;
-
-  todoItem.appendChild(todoText);
-  todos.appendChild(todoItem);
 };
 
 // 새로운 할 일 입력 받을 때 localStorage에 추가한다
 const addTodoList = () => {
   event.preventDefault;
-  const inputItem = document.getElementById("input-text").value;
-  todoList = [...todoList, inputItem];
-  localStorage.setItem("todo", JSON.stringify(todoList)); // 로컬 스토리지에 저장
-  loadLocalStorage();
+  const inputObject = {
+    id: Date.now(),
+    text: document.getElementById("input-text").value,
+    isDone: false,
+  };
+  // 중복은 못 받게 해야 하는데...
+  itemList = [...itemList, inputObject];
+  localStorage.setItem("itemList", JSON.stringify(itemList)); // 로컬 스토리지에 저장
+  renderTodoItem();
 };
 
-window.onload = loadLocalStorage();
+window.onload = renderTodoItem();
