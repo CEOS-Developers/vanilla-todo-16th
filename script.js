@@ -7,22 +7,10 @@ const doneList = document.querySelector('.done-list');
 const doingNum = document.querySelector('.doing-num');
 const doneNum = document.querySelector('.done-num');
 
+const celebrate = document.querySelector('.celebrate');
+
 let doingID = 0;
 let doneID = 0;
-
-const deleteDoing = (e) => {
-  const removeList = e.target.parentElement;
-  removeList.remove();
-  doingID--;
-  doingNum.textContent = doingID;
-};
-
-const deleteDone = (e) => {
-  const removeList = e.target.parentElement;
-  removeList.remove();
-  doneID--;
-  doneNum.textContent = doneID;
-};
 
 // doing-list || done-list에 요소 추가
 const plusList = (listName, listText) => {
@@ -51,6 +39,20 @@ const plusList = (listName, listText) => {
   }
 };
 
+const deleteDoing = (e) => {
+  const removeList = e.target.parentElement;
+  removeList.remove();
+  doingID--;
+  doingNum.textContent = doingID;
+};
+
+const deleteDone = (e) => {
+  const removeList = e.target.parentElement;
+  removeList.remove();
+  doneID--;
+  doneNum.textContent = doneID;
+};
+
 const moveToDoing = (e) => {
   doingID++;
   doingNum.textContent = doingID;
@@ -67,6 +69,13 @@ const moveToDone = (e) => {
   const doneText = e.target.parentElement.children[0].textContent;
   plusList(doneList, doneText);
   deleteDoing(e);
+
+  // 투두리스트 완료 시 축하
+  celebrate.style.display = 'block';
+
+  setTimeout(() => {
+    celebrate.style.display = 'none';
+  }, 2000);
 };
 
 const paintTodos = () => {

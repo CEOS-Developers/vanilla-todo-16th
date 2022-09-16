@@ -12,6 +12,13 @@ hr {
   background-color: white;
 }
 
+.celebrate {
+  display: none;
+  position: absolute;
+  height: 30rem;
+  width: 30rem;
+}
+
 .container {
   flex-direction: column;
   justify-content: center;
