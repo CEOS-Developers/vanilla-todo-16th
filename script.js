@@ -51,10 +51,12 @@ const addTodoList = () => {
     text: document.getElementById("input-text").value,
     isDone: false,
   };
-  // 중복은 못 받게 해야 하는데...
-  itemList = [...itemList, inputObject];
-  localStorage.setItem("itemList", JSON.stringify(itemList)); // 로컬 스토리지에 저장
-  renderTodoItem();
+  if (inputObject.text) {
+    // 빈 입력은 받지 않음
+    itemList = [...itemList, inputObject];
+    localStorage.setItem("itemList", JSON.stringify(itemList)); // 로컬 스토리지에 저장
+    renderTodoItem();
+  }
 };
 
 // isDone의 상태를 반대로 바꿔 준다
