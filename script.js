@@ -1,4 +1,3 @@
-//필요한 전역변수 선언
 const form = document.querySelector('form');
 const text = document.querySelector('#to-do-list');
 var input = document.getElementById('inputValue');
