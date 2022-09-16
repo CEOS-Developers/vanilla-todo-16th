@@ -1,3 +1,57 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr 2fr 2fr;
+  background-color: white;
+  border-radius: 20px;
+  width: 500px;
+  height: 800px;
+  box-shadow: 1px 1px 10px white;
+  padding: 30px;
+}
+
+h1, h2, form {
+    margin: 20px;
+}
+
+#todoForm input {
+    width: 400px;
+    height: 50px;
+    border: 4px solid pink;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+}
+
+#todoForm button:active {
+    outline: none;
+    box-shadow: none;
+}
+
+ul {
+    font-size: 25px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+hr {
+    border : 0px;
+    border-top: 4px dashed pink;
+}
+
 .finline {
   text-decoration: line-through;
   color: dimgray;
