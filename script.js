@@ -11,7 +11,7 @@ let doneList = [];
 let todo_num=0;
 let done_num=0;
 
-// local storage에 있는 todolist, donelist 갖고오기
+// localStorage에 있는 todolist, donelist 갖고오기
 function getList(){
     const localToDoList = localStorage.getItem("toDoList");
     const localDoneList = localStorage.getItem("doneList");
@@ -36,6 +36,7 @@ function calLen(){
     toDoLen.innerHTML = toDoList.length;
     doneLen.innerHTML = doneList.length;
 }
+
 
 // todolist, donelist 저장함수
 function addFunc(text,id,type){
