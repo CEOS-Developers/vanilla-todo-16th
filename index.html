@@ -12,16 +12,18 @@
       <div class="mktodo">
         <h1>투두리스트</h1>
         <form id="todoForm">
-          <input placeholder="할 일을 입력하세요" />
-          <button id="plusBtn" type="submit">+</button>
+          <input placeholder="할 일을 입력하고 ➕ or ↵(Enter)" />
+          <button id="plusBtn" type="submit">➕</button>
         </form>
       </div>
       <div class="todo">
-        <h2>To Do</h2>
+        <hr>
+        <h2 id="todoTitle">To Do (0)</h2>
         <ul id="todoList"></ul>
       </div>
       <div class="done">
-        <h2>Done</h2>
+        <hr>
+        <h2 id="doneTitle">Done (0)</h2>
         <ul id="doneList"></ul>
       </div>
     </div>
