@@ -1,9 +1,18 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
 body {
   height: 100vh;
   background: linear-gradient(to left, rgb(221, 202, 209), rgb(210, 173, 190));
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Pretendard-Regular";
 }
 
 .container {
@@ -19,7 +28,23 @@ body {
 h1,
 h2 {
   margin-left: 5%;
+  margin-bottom: 0;
 }
+
+button {
+  border: 0;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* 
+li {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+} */
 
 /* input-form */
 
@@ -27,6 +52,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
@@ -40,25 +66,19 @@ h2 {
   background-color: rgba(213, 213, 213, 0.5);
 }
 
-#input-button {
-  border: 0;
-  background: none;
-  font-size: 20px;
-  cursor: pointer;
-}
+/* todo-section, done-section */
 
-/* todo-section */
-
-.todo-section {
-  flex: 0.5;
-  overflow: auto;
-  border-top: 1px solid rgb(213, 213, 213);
-}
-
-/* done-section */
-
+.todo-section,
 .done-section {
   flex: 0.5;
-  overflow: auto;
   border-top: 1px solid rgb(213, 213, 213);
+}
+
+#todo-list,
+#done-list {
+  cursor: pointer;
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0;
+  overflow: auto;
 }
