@@ -25,8 +25,7 @@ const plusList = (listName, listText) => {
   button.setAttribute('src', './img/delete.png');
   button.classList.add('delete-button');
 
-  li.appendChild(text);
-  li.appendChild(button);
+  li.appendChild(text, button);
 
   listName.appendChild(li);
 
