@@ -1,0 +1,108 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  margin-top: 5rem;
+}
+
+hr {
+  height: 0.2rem;
+  width: 25rem;
+  background-color: white;
+}
+
+.celebrate {
+  display: none;
+  position: absolute;
+  height: 30rem;
+  width: 30rem;
+}
+
+.container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid white; */
+}
+
+.row-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: -2rem;
+}
+
+.title {
+  padding-left: 1rem;
+  color: white;
+  text-align: left;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.todo-form {
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+
+.todo-input {
+  width: 20rem;
+  height: 2rem;
+}
+
+.enter-button {
+  margin-bottom: -0.8rem;
+  margin-left: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+  background-image: url('./img/plus.png');
+}
+
+.text-container {
+  flex-direction: column;
+  width: 25rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.todo-text {
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.done-num {
+  font-size: 1rem;
+  margin-top: 1.6rem;
+  text-align: center;
+  color: white;
+}
+.doing-num {
+  font-size: 1rem;
+  margin-top: 1.6rem;
+  text-align: center;
+  color: white;
+}
+
+.todo-item {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+}
+
+.delete-button {
+  margin-right: 1rem;
+  height: 1rem;
+  width: 1rem;
+  background-image: url('./img/delete.png');
+  border: none;
+}
+
+.counter {
+  flex-direction: row;
+}
