@@ -22,7 +22,7 @@ const plusList = (listName, listText) => {
   text.innerText = listText;
 
   const button = document.createElement('img');
-  button.setAttribute('src', './img/delete.png');
+  // button.setAttribute('src', './img/delete.png');
   button.classList.add('delete-button');
 
   li.append(text, button);
