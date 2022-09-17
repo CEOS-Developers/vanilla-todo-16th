@@ -6,6 +6,35 @@ const doneList = document.getElementById('done');
 const doingText = document.getElementById('doingText');
 const doneText = document.getElementById('doneText');
 
+function checkToggle(event) {
+  if (event.target.innerText == '✅') {
+    const checkItem = event.target.parentElement;
+    const toDoing = event.target;
+    toDoing.innerText = '⬆️';
+    doneList.appendChild(checkItem);
+    doingText.innerText = `Doing (${toDoList.childElementCount})`;
+    doneText.innerText = `Done (${doneList.childElementCount})`;
+  } else {
+    const returnItem = event.target.parentElement;
+    const returnCheck = event.target;
+    returnCheck.innerText = '✅';
+    toDoList.appendChild(returnItem);
+    doingText.innerText = `Doing (${toDoList.childElementCount})`;
+    doneText.innerText = `Done (${doneList.childElementCount})`;
+  }
+}
+
+// function returnToDo(event) {
+//   const returnItem = event.target.parentElement;
+//   const returnCheck = event.target;
+//   returnCheck.innerText = '✅';
+//   toDoList.appendChild(returnItem);
+//   doingText.innerText = `Doing (${toDoList.childElementCount})`;
+//   doneText.innerText = `Done (${doneList.childElementCount})`;
+
+//   returnCheck.addEventListener('click', checkToggle);
+// }
+
 function deleteToDo(event) {
   const deleteItem = event.target.parentElement;
   deleteItem.remove();
@@ -13,14 +42,16 @@ function deleteToDo(event) {
   doneText.innerText = `Done (${doneList.childElementCount})`;
 }
 
-function checkToDo(event) {
-  const checkItem = event.target.parentElement;
-  event.target.remove();
-  //Done에 들어오면 체크박스 지우기
-  doneList.appendChild(checkItem);
-  doingText.innerText = `Doing (${toDoList.childElementCount})`;
-  doneText.innerText = `Done (${doneList.childElementCount})`;
-}
+// function checkToDo(event) {
+//   const checkItem = event.target.parentElement;
+//   const toDoing = event.target;
+//   toDoing.innerText = '⬆️';
+//   doneList.appendChild(checkItem);
+//   doingText.innerText = `Doing (${toDoList.childElementCount})`;
+//   doneText.innerText = `Done (${doneList.childElementCount})`;
+
+//   toDoing.addEventListener('click', checkToggle);
+// }
 
 function Doing(saveToDo) {
   const content = document.createElement('li');
@@ -29,7 +60,7 @@ function Doing(saveToDo) {
 
   checkBtn.innerText = '✅';
   deleteBtn.innerText = '❌';
-  checkBtn.addEventListener('click', checkToDo);
+  checkBtn.addEventListener('click', checkToggle);
   deleteBtn.addEventListener('click', deleteToDo);
   checkBtn.id = 'check';
   deleteBtn.id = 'delete';
