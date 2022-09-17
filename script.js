@@ -25,7 +25,8 @@ const plusList = (listName, listText) => {
   button.setAttribute('src', './img/delete.png');
   button.classList.add('delete-button');
 
-  li.appendChild(text, button);
+  li.appendChild(text);
+  li.appendChild(button);
 
   listName.appendChild(li);
 
@@ -87,7 +88,11 @@ const paintTodos = () => {
 
 function handleToDoSubmit(e) {
   e.preventDefault();
-  paintTodos();
+  if (todoInput.value.trim() === '') {
+    alert('한 글자 이상 입력해주세요!!');
+  } else {
+    paintTodos();
+  }
 }
 
 const init = () => {
