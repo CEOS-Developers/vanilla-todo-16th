@@ -55,3 +55,13 @@
 - [FlexBox 가이드](https://heropy.blog/2018/11/24/css-flexible-box/)
 - [JS를 통한 DOM 조작](https://velog.io/@bining/javascript-DOM-%EC%A1%B0%EC%9E%91%ED%95%98%EA%B8%B0#append)
 - [localStorage, sessionStorage](https://www.daleseo.com/js-web-storage/)
+
+feat : 새로운 기능에 대한 커밋
+fix ! 버그 수정에 대한 커밋
+build : 빌드 관련 파일 수정에 대한 커밋
+chore : 그 외 자잘한 수정에 대한 커밋
+ci : CI관련 설정 수정에 대한 커밋
+docs : 문서 수정에 대한 커밋
+style : 코드 스타일 혹은 포맷 등에 관한 커밋
+refactor: 코드 리팩토링에 대한 커밋
+test : 테스트 코드 수정에 대한 커밋
