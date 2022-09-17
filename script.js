@@ -29,27 +29,28 @@ const plusList = (listName, listText) => {
 
   listName.appendChild(li);
 
+  button.addEventListener('click', (e) => {
+    deleteList(e, listName);
+  });
+
   if (listName === doingList) {
-    button.addEventListener('click', deleteDoing);
     text.addEventListener('click', moveToDone);
   } else {
-    button.addEventListener('click', deleteDone);
     text.addEventListener('click', moveToDoing);
   }
 };
 
-const deleteDoing = (e) => {
+const deleteList = (e, listName) => {
   const removeList = e.target.parentElement;
   removeList.remove();
-  doingID--;
-  doingNum.textContent = doingID;
-};
 
-const deleteDone = (e) => {
-  const removeList = e.target.parentElement;
-  removeList.remove();
-  doneID--;
-  doneNum.textContent = doneID;
+  if (listName === doingList) {
+    doingID--;
+    doingNum.textContent = doingID;
+  } else {
+    doneID--;
+    doneNum.textContent = doneID;
+  }
 };
 
 const moveToDoing = (e) => {
@@ -58,7 +59,7 @@ const moveToDoing = (e) => {
 
   const doingText = e.target.parentElement.children[0].textContent;
   plusList(doingList, doingText);
-  deleteDone(e);
+  deleteList(e, doneList);
 };
 
 const moveToDone = (e) => {
@@ -67,7 +68,7 @@ const moveToDone = (e) => {
 
   const doneText = e.target.parentElement.children[0].textContent;
   plusList(doneList, doneText);
-  deleteDoing(e);
+  deleteList(e, doingList);
 
   // 투두리스트 완료 시 축하
   celebrate.style.display = 'block';
