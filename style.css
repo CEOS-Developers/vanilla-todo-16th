@@ -27,13 +27,15 @@ hr {
 }
 
 .row-container {
+  display: flex;
   flex-direction: row;
+  margin-top: -2rem;
 }
 
 .title {
   padding-left: 1rem;
   color: white;
-  text-align: center;
+  text-align: left;
   font-size: 2rem;
   font-weight: bold;
 }
@@ -71,11 +73,13 @@ hr {
 
 .done-num {
   font-size: 1rem;
+  margin-top: 1.6rem;
   text-align: center;
   color: white;
 }
 .doing-num {
   font-size: 1rem;
+  margin-top: 1.6rem;
   text-align: center;
   color: white;
 }
