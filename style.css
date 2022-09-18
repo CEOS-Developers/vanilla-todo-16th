@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'EarlyFontDiary';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    font-family: 'EarlyFontDiary';
+    height: 100%;
+    display: flex;
+    align-items : center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    overflow: hidden;
+    background-color: rgb(0, 70, 42);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+    width: 360px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid gray;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    box-sizing: border-box;
+    padding: 10px;
+    height: 50px;
+    width: 250px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+button {
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 200px;
+    overflow: hidden auto;
+}
+
+#done-list {
+    text-decoration: line-through;
+    color: gray;
+}
