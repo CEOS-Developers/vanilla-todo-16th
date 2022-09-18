@@ -26,11 +26,10 @@ function createTodo(content) {
   completeBtn.innerText = "✅";
   completeBtn.addEventListener("click", completeTodo);
 
-  const todoLi = document.createElement("li");
-  todoLi.appendChild(todoSpan);
-  todoLi.appendChild(completeBtn);
+  const newTodoLi = document.createElement("li");
+  newTodoLi.append(todoSpan, completeBtn);
 
-  todoList.append(todoLi);
+  todoList.append(newTodoLi);
 }
 
 function completeTodo(e) {
