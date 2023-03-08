@@ -3,12 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla Todo</title>
+    <title>CEOS Todo List</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <h1>뚜두 리스트!</h1>
+      <div class="post">
+        <form id="toDoForm">
+          <input type="text" placeholder="Write Here!" id="toDoInput" />
+          <button type="submit" id="toDoBtn">추가</button>
+          <!--form안에 submit type의 button두면 클릭과 엔터를 모두 submit event로 쓸 수 있음-->
+        </form>
+      </div>
+      <hr />
+      <div class="doingContainer">
+        <span id="doingText">하는 중.... (0)</span>
+        <ul id="doing"></ul>
+      </div>
+      <div class="doneContainer">
+        <span id="doneText">끝!!! (0)</span>
+        <ul id="done"></ul>
+      </div>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
