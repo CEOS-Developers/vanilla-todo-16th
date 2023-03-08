@@ -12,15 +12,15 @@ function checkToggle(event) {
     const toDoing = event.target;
     toDoing.innerText = '⬆️';
     doneList.appendChild(checkItem);
-    doingText.innerText = `Doing (${toDoList.childElementCount})`;
-    doneText.innerText = `Done (${doneList.childElementCount})`;
+    doingText.innerText = `하는 중.... (${toDoList.childElementCount})`;
+    doneText.innerText = `끝!!! (${doneList.childElementCount})`;
   } else {
     const returnItem = event.target.parentElement;
     const returnCheck = event.target;
     returnCheck.innerText = '✅';
     toDoList.appendChild(returnItem);
-    doingText.innerText = `Doing (${toDoList.childElementCount})`;
-    doneText.innerText = `Done (${doneList.childElementCount})`;
+    doingText.innerText = `하는 중.... (${toDoList.childElementCount})`;
+    doneText.innerText = `끝!!! (${doneList.childElementCount})`;
   }
 }
 
@@ -38,8 +38,8 @@ function checkToggle(event) {
 function deleteToDo(event) {
   const deleteItem = event.target.parentElement;
   deleteItem.remove();
-  doingText.innerText = `Doing (${toDoList.childElementCount})`;
-  doneText.innerText = `Done (${doneList.childElementCount})`;
+  doingText.innerText = `하는 중.... (${toDoList.childElementCount})`;
+  doneText.innerText = `끝!!! (${doneList.childElementCount})`;
 }
 
 // function checkToDo(event) {
@@ -69,13 +69,13 @@ function Doing(saveToDo) {
   content.appendChild(checkBtn);
   content.appendChild(deleteBtn);
   toDoList.appendChild(content);
-  doingText.innerText = `Doing (${toDoList.childElementCount})`;
+  doingText.innerText = `하는 중.... (${toDoList.childElementCount})`;
 }
 
 function onSubmit(event) {
   event.preventDefault();
   const saveToDo = toDoInput.value;
-  if (saveToDo) {
+  if (saveToDo.trim()) {
     toDoInput.value = '';
     Doing(saveToDo);
   } else {
